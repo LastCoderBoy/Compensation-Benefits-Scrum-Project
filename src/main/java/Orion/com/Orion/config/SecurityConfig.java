@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -36,13 +37,20 @@ public class SecurityConfig {
         return http
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/api/v1/student/dashboard/register","/api/v1/student/dashboard/login" )
+                        .requestMatchers("/api/v1/student/register","/api/v1/student/login" )
                         .permitAll()
                         .anyRequest()
                         .authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                .logout(logout -> logout
+                        .logoutUrl("/logout") // The URL for logout
+                        .logoutSuccessUrl("/api/v1/student/login?logout=true") // Redirect after successful logout
+                        .invalidateHttpSession(true) // Invalidate the session
+                        .clearAuthentication(true) // Clear authentication details
+                        .deleteCookies("JSESSIONID") // Optionally, remove the session cookie
+                )
                 .build();
     }
 

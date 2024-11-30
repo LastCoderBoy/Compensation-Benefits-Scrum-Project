@@ -339,15 +339,15 @@ main .new-badges .badge-list .badge img{
     border-radius: 50%;
 }
 
-main .recent-orders{
+main .student-tasks{
     margin-top: 1.3rem;
 }
 
-main .recent-orders h2{
+main .student-tasks h2{
     margin-bottom: 0.8rem;
 }
 
-main .recent-orders table{
+main .student-tasks table{
     background-color: var(--color-white);
     width: 100%;
     padding: var(--card-padding);
@@ -357,7 +357,7 @@ main .recent-orders table{
     transition: all 0.3s ease;
 }
 
-main .recent-orders table:hover{
+main .student-tasks table:hover{
     box-shadow: none;
 }
 
@@ -371,7 +371,7 @@ main table tbody tr:last-child td{
     border: none;
 }
 
-main .recent-orders a{
+main .student-tasks a{
     text-align: center;
     display: block;
     margin: 1rem auto;
@@ -461,6 +461,25 @@ main .recent-orders a{
 
 .right-section .reminders{
     margin-top: 2rem;
+    max-height: 300px; /* Set a height that suits your design */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    overflow-x: hidden;
+}
+.reminders::-webkit-scrollbar {
+    width: 8px;
+}
+
+.reminders::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.reminders::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.reminders::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .right-section .reminders .header{
@@ -567,7 +586,7 @@ main .recent-orders a{
         flex-basis: 40%;
     }
 
-    main .recent-orders {
+    main .student-tasks {
         width: 94%;
         position: absolute;
         left: 50%;
@@ -575,7 +594,7 @@ main .recent-orders a{
         margin: 2rem 0 0 0.8rem;
     }
 
-    main .recent-orders table{
+    main .student-tasks table{
         width: 83vw;
     }
 
@@ -652,13 +671,13 @@ main .recent-orders a{
         flex-basis: 35%;
     }
 
-    main .recent-orders{
+    main .student-tasks{
         position: relative;
         margin: 3rem 0 0 0;
         width: 100%;
     }
 
-    main .recent-orders table{
+    main .student-tasks table{
         width: 100%;
         margin: 0;
     }

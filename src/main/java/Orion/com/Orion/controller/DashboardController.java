@@ -62,7 +62,7 @@ public class DashboardController {
             model.addAttribute("studentBenefits", studentBenefits);
             model.addAttribute("achievements", achievements);
             model.addAttribute("assignedTasks", assignedTasks);
-            model.addAttribute("userName", student.getUsername());
+            model.addAttribute("studentName", student.getName());
             model.addAttribute("newProjects", newProjects);
 
             return "dashboard";
