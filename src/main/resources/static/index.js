@@ -24,7 +24,7 @@ Orders.forEach(order => {
     const trContent = `
         <td>${order.productName}</td>
         <td>${order.productNumber}</td>
-        <td class="${order.status === 'Failed' ? 'danger' : order.status === 'Passed' ? 'success' : 'warning'}">${order.status}</td>
+        <td class="${order.status === 'Expired' ? 'danger' : order.status === 'Complete' ? 'success' : 'warning'}">${order.status}</td>
         <td class="primary">Details</td>
     `;
     tr.innerHTML = trContent;

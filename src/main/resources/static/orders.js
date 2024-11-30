@@ -7,11 +7,11 @@ const Orders = [
     {
         productName: 'CSS Full Course',
         productNumber: '97245',
-        status: 'Failed'
+        status: 'Expired'
     },
     {
         productName: 'Java Tutorial',
         productNumber: '36452',
-        status: 'Passed'
+        status: 'Complete'
     },
 ]
