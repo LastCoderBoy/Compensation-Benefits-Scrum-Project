@@ -29,9 +29,4 @@ public class StudentBenefits {
 
     @Column(name = "number_of_absences")
     private Integer numberOfAbsences;
-
-    @Column(name = "achievements")
-    private String achievements;
-
-
 }

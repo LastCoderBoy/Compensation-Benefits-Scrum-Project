@@ -16,7 +16,7 @@ public class StudentController {
     private final StudentService studentService;
 
     @PostMapping("/register")
-    public StudentInfo register(@RequestBody StudentInfo student){
+    public StudentInfo register(@RequestBody StudentInfo student) throws Exception {
         return studentService.register(student);
     }
 

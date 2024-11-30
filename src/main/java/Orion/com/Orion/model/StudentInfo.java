@@ -17,4 +17,6 @@ public class StudentInfo {
     Integer id;
     String username;
     String password;
+    String name;
+    String surname;
 }

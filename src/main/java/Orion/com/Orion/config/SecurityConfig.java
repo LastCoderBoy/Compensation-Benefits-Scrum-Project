@@ -36,7 +36,7 @@ public class SecurityConfig {
         return http
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("api/v1/orion/register","api/v1/orion/login" )
+                        .requestMatchers("/api/v1/student/dashboard/register","/api/v1/student/dashboard/login" )
                         .permitAll()
                         .anyRequest()
                         .authenticated())

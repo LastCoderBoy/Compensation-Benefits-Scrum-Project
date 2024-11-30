@@ -1,7 +1,11 @@
 package Orion.com.Orion.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+import java.util.List;
+
+@Data
 @Entity
 @Table(name = "Student_Tasks")
 public class AssignedTasks {
